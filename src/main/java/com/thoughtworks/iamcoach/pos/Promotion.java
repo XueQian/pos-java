@@ -1,18 +1,17 @@
 package com.thoughtworks.iamcoach.pos;
 
-public class Cart {
+public class Promotion {
     private String barcode;
-    private double count;
+    private double price;
 
-    public Cart(){
+    public Promotion(){
 
     }
 
-    public Cart(String barcode,double count){
+    public Promotion(String barcode,double price){
         this.barcode = barcode;
-        this.count = count;
+        this.price = price;
     }
-
 
     public String getBarcode() {
         return barcode;
@@ -22,11 +21,11 @@ public class Cart {
         this.barcode = barcode;
     }
 
-    public double getCount() {
-        return count;
+    public double getPrice() {
+        return price;
     }
 
-    public void setCount(double count) {
-        this.count = count;
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
