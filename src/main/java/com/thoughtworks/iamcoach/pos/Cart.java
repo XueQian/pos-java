@@ -13,7 +13,6 @@ public class Cart {
         this.count = count;
     }
 
-
     public String getBarcode() {
         return barcode;
     }
