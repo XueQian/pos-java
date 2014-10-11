@@ -3,14 +3,14 @@ package com.thoughtworks.iamcoach.pos;
 public class Items {
     private String barcode;
     private String name;
-    private String price;
+    private double price;
     private String unit;
 
     public Items(){
 
     }
 
-    public Items(String barcode, String name, String price, String unit) {
+    public Items(String barcode, String name, double price, String unit) {
         this.barcode = barcode;
         this.name = name;
         this.price = price;
@@ -33,11 +33,11 @@ public class Items {
         this.name = name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
