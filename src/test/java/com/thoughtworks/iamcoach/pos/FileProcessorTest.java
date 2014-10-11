@@ -31,7 +31,7 @@ public class FileProcessorTest {
     }
 
     @Test
-    public void should_get_abusolute_path()throws Exception{
+    public void should_get_abusolute_path(){
         assertThat(getFilePath("cart.txt")).isEqualTo("/home/xueqian/java_projects/pos-java/cart.txt");
 
     }
