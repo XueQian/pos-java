@@ -57,5 +57,13 @@ public class PromotionProcessorTest {
 
     }
 
+    @Test
+    public void should_return_discount_promotion_list(){
+        PromotionProcessor promotionProcessor = new PromotionProcessor();
+        assertThat(promotionProcessor.discountProcess().get(2).getBarcode()).isEqualTo("ITEM000005");
+        assertThat(promotionProcessor.discountProcess().get(1).getDiscount()).isEqualTo(85);
+
+    }
+
 
 }

@@ -14,7 +14,18 @@ public class PromotionProcessor extends FileProcessor{
     }
 
     public List<Promotion> discountProcess(){
-        return null;
+
+        List<Promotion> promotions = new ArrayList<Promotion>();
+        List<String> promotionList = readFile("discount_promotion.txt");
+
+        for (String aPromotionList : promotionList){
+            String[] stringPromotion = aPromotionList.split(":");
+            Promotion promotion = new Promotion(stringPromotion[0],Double.parseDouble(stringPromotion[1]));
+            promotions.add(promotion);
+        }
+
+        return promotions;
+
     }
 
     private List<Promotion> process(String fileName){

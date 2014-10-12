@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) {
 
         PromotionProcessor promotionProcessor = new PromotionProcessor();
-//        promotionProcessor.halfProcess();
-       System.out.print(promotionProcessor.halfProcess().get(0).getBarcode());
+//        promotionProcessor.discountProcess();
+      System.out.print(promotionProcessor.discountProcess().get(0).getDiscount());
     }
 }
