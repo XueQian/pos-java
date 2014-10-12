@@ -9,4 +9,9 @@ public class PromotionProcessor {
         List<Promotion> promotions = new ArrayList<Promotion>();
         return  promotions;
     }
+
+    public List<Promotion> discountProcess() {
+        List<Promotion> promotions = new ArrayList<Promotion>();
+        return  promotions;
+    }
 }
