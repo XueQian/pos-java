@@ -18,8 +18,10 @@ public class FileProcessorTest {
         FileProcessor fileProcessor = mock(FileProcessor.class);
         data.add(0,"aaa");
         data.add(1,"eee");
+
         when(fileProcessor.readFile("items.txt")).thenReturn(data);
         assertThat(fileProcessor.readFile("items.txt")).isEqualTo(data);
     }
 
 }
+
