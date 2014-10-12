@@ -14,8 +14,8 @@ public class ScannerTest {
 
         Item item = new Item("ITEM000001", "可乐", 11, "瓶");
 
-        when(scanner.getItem()).thenReturn(item);
-        assertThat(scanner.getItem().getBarcode()).isEqualTo("ITEM000001");
+        when(scanner.getItem("ITEM000001")).thenReturn(item);
+        assertThat(scanner.getItem("ITEM000001").getBarcode()).isEqualTo("ITEM000001");
     }
 
 }
