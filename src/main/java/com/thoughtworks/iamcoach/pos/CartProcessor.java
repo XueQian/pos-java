@@ -2,12 +2,13 @@ package com.thoughtworks.iamcoach.pos;
 
 import java.util.*;
 
-public class CartProcessor extends FileProcessor {
+public class CartProcessor {
 
     public List<Cart> process() {
 
+        FileProcessor fileProcessor = new FileProcessor();
         List<Cart> carts = new ArrayList<Cart>();
-        List<String> cartList = readFile("cart.txt");
+        List<String> cartList = fileProcessor.readFile("cart.txt");
 
         for (String aCartList : cartList) {
             if (aCartList.length() > 10) {
