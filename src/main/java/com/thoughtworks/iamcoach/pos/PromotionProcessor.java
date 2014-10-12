@@ -3,7 +3,7 @@ package com.thoughtworks.iamcoach.pos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PromotionProcessor extends FileProcessor{
+public class PromotionProcessor {
 
     public List<Promotion> freeProcess() {
         return this.process("buy_two_get_one_free_promotion.txt");
@@ -15,8 +15,10 @@ public class PromotionProcessor extends FileProcessor{
 
     public List<Promotion> discountProcess(){
 
+        FileProcessor fileProcessor = new FileProcessor();
+
         List<Promotion> promotions = new ArrayList<Promotion>();
-        List<String> promotionList = readFile("discount_promotion.txt");
+        List<String> promotionList = fileProcessor.readFile("discount_promotion.txt");
 
         for (String aPromotionList : promotionList){
             String[] stringPromotion = aPromotionList.split(":");
@@ -25,13 +27,13 @@ public class PromotionProcessor extends FileProcessor{
         }
 
         return promotions;
-
     }
 
     private List<Promotion> process(String fileName){
 
+        FileProcessor fileProcessor = new FileProcessor();
         List<Promotion> promotions = new ArrayList<Promotion>();
-        List<String> promotionList = readFile(fileName);
+        List<String> promotionList = fileProcessor.readFile(fileName);
 
         for(String aPromotionList : promotionList){
             Promotion promotion = new Promotion(aPromotionList);
