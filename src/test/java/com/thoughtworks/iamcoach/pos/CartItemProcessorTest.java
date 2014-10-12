@@ -10,8 +10,8 @@ public class CartItemProcessorTest {
     @Test
     public void should_return_a_cart_list(){
 
-        CartProcessor cartProcessor = new CartProcessor();
-        assertThat(cartProcessor.process().get(0).getCount()).isEqualTo(2);
-        assertThat(cartProcessor.process().get(1).getCount()).isEqualTo(3);
+        CartItemProcessor cartItemProcessor = new CartItemProcessor();
+        assertThat(cartItemProcessor.process().get(0).getCount()).isEqualTo(2);
+        assertThat(cartItemProcessor.process().get(1).getCount()).isEqualTo(3);
     }
 }
