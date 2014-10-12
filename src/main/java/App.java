@@ -1,9 +1,12 @@
-import com.thoughtworks.iamcoach.pos.CartProcessor;
+
+import com.thoughtworks.iamcoach.pos.Promotion;
+import com.thoughtworks.iamcoach.pos.PromotionProcessor;
 
 public class App {
     public static void main(String[] args) {
-        //TODO: Need to implement.
-        CartProcessor c = new CartProcessor();
-        c.process();
+
+        PromotionProcessor promotionProcessor = new PromotionProcessor();
+//        promotionProcessor.halfProcess();
+       System.out.print(promotionProcessor.halfProcess().get(0).getBarcode());
     }
 }
