@@ -50,5 +50,12 @@ public class PromotionProcessorTest {
                 .isEqualTo("ITEM000001");
     }
 
+    @Test
+    public void should_return_buy_two_get_one_free_promotion_list(){
+        PromotionProcessor promotionProcessor = new PromotionProcessor();
+        assertThat(promotionProcessor.freeProcess().get(2).getBarcode()).isEqualTo("ITEM000005");
+
+    }
+
 
 }

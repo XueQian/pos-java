@@ -5,13 +5,16 @@ import java.util.List;
 
 public class PromotionProcessor extends FileProcessor{
 
-    public List<Promotion> halfProcess() {
+    public List<Promotion> freeProcess() {
         return this.process("buy_two_get_one_free_promotion.txt");
     }
 
-    public List<Promotion> discountProcess() {
-        List<Promotion> promotions = new ArrayList<Promotion>();
-        return  promotions;
+    public List<Promotion> halfProcess() {
+        return this.process("second_half_price_promotion.txt");
+    }
+
+    public List<Promotion> discountProcess(){
+        return null;
     }
 
     private List<Promotion> process(String fileName){
