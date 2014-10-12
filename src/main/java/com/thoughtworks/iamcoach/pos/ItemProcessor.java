@@ -1,7 +1,13 @@
 package com.thoughtworks.iamcoach.pos;
 
-/**
- * Created by xueqian on 10/12/14.
- */
-public class ItemProcessor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ItemProcessor extends FileProcessor {
+    public List<Item> process(){
+        List<Item> items = new ArrayList<Item>();
+        return items;
+    }
+
 }
+
