@@ -12,12 +12,6 @@ import static org.mockito.Mockito.when;
 
 public class FileProcessorTest {
 
-    private static String getFilePath(String fileName) {
-
-        File file = new File(fileName);
-        return file.getAbsolutePath();
-    }
-
     @Test
     public void should_get_a_list(){
 
@@ -27,12 +21,6 @@ public class FileProcessorTest {
         data.add(1,"eee");
         when(fileProcessor.readFile("items.txt")).thenReturn(data);
         assertThat(fileProcessor.readFile("items.txt")).isEqualTo(data);
-    }
-
-    @Test
-    public void should_get_abusolute_path(){
-        assertThat(getFilePath("cart.txt")).isEqualTo("/home/xueqian/java_projects/pos-java/cart.txt");
-
     }
 
 }

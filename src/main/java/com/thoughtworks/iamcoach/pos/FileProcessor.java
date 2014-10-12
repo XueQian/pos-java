@@ -12,11 +12,11 @@ public class FileProcessor {
 
     public List readFile(String fileName) {
 
-//        String filePath = this.getFilePath(fileName);
+        String filePath = FileProcessor.class.getClassLoader().getResource(fileName).getPath();
         List<String> data = new ArrayList<String>();
      try{
 
-         data= Files.readAllLines(Paths.get(fileName),
+         data= Files.readAllLines(Paths.get(filePath),
          Charset.defaultCharset());
      }catch (IOException e){
 
@@ -25,9 +25,4 @@ public class FileProcessor {
         return data;
     }
 
-    private static String getFilePath(String fileName) {
-
-        File file = new File(fileName);
-        return file.getAbsolutePath();
-    }
 }
