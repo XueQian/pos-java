@@ -1,5 +1,4 @@
 
-import com.thoughtworks.iamcoach.pos.Promotion;
 import com.thoughtworks.iamcoach.pos.PromotionProcessor;
 
 public class App {

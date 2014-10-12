@@ -1,7 +1,16 @@
 package com.thoughtworks.iamcoach.pos;
 
-/**
- * Created by xueqian on 10/12/14.
- */
 public class PromotionCaculator {
+
+
+
+
+
+
+    public Double caculateOneFree(String barcode){
+        ItemProcessor itemProcessor = new ItemProcessor();
+
+
+        return 0.0;
+    }
 }
