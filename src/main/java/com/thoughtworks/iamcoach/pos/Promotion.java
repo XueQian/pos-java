@@ -2,15 +2,16 @@ package com.thoughtworks.iamcoach.pos;
 
 public class Promotion {
     private String barcode;
-    private double price;
+    private double discount;
 
-    public Promotion(){
+    public Promotion(String barcode){
+        this.barcode = barcode;
 
     }
 
-    public Promotion(String barcode,double price){
+    public Promotion(String barcode,double discount){
         this.barcode = barcode;
-        this.price = price;
+        this.discount = discount;
     }
 
     public String getBarcode() {
@@ -22,10 +23,10 @@ public class Promotion {
     }
 
     public double getPrice() {
-        return price;
+        return discount;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.discount = price;
     }
 }
