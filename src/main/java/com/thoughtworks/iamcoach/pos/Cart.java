@@ -1,24 +1,24 @@
 package com.thoughtworks.iamcoach.pos;
 
 public class Cart {
-    private String barcode;
+    private Item item;
     private double count;
 
     public Cart(){
 
     }
 
-    public Cart(String barcode,double count){
-        this.barcode = barcode;
+    public Cart(Item item,double count){
+        this.item = item;
         this.count = count;
     }
 
-    public String getBarcode() {
-        return barcode;
+    public Item getItem() {
+        return item;
     }
 
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public double getCount() {
