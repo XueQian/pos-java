@@ -1,10 +1,10 @@
 
-import com.thoughtworks.iamcoach.pos.CartItemProcessor;
+import com.thoughtworks.iamcoach.pos.Scanner;
 
 public class App {
     public static void main(String[] args) {
 
-        CartItemProcessor i = new CartItemProcessor();
+        Scanner i = new Scanner();
         i.process();
 //        promotionProcessor.discountProcess();
 //      System.out.print(i.process().size());

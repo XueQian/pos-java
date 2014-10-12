@@ -2,7 +2,7 @@ package com.thoughtworks.iamcoach.pos;
 
 import java.util.*;
 
-public class CartItemProcessor {
+public class Scanner {
 
     public List<CartItem> process() {
 
