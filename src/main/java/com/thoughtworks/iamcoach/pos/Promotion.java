@@ -22,11 +22,11 @@ public class Promotion {
         this.barcode = barcode;
     }
 
-    public double getPrice() {
+    public double getDiscount() {
         return discount;
     }
 
-    public void setPrice(double price) {
-        this.discount = price;
+    public void setDiscount(double discount) {
+        this.discount = discount;
     }
 }
