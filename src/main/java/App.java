@@ -1,10 +1,9 @@
-import com.thoughtworks.iamcoach.pos.FileProcessor;
+import com.thoughtworks.iamcoach.pos.CartProcessor;
 
 public class App {
     public static void main(String[] args) {
         //TODO: Need to implement.
-        FileProcessor i = new FileProcessor();
-        System.out.print(i.readFile("cart.txt"));
+        CartProcessor c = new CartProcessor();
+        c.process();
     }
-
 }
