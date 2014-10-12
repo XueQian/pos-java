@@ -1,11 +1,10 @@
 
-import com.thoughtworks.iamcoach.pos.CartProcessor;
-import com.thoughtworks.iamcoach.pos.PromotionProcessor;
+import com.thoughtworks.iamcoach.pos.CartItemProcessor;
 
 public class App {
     public static void main(String[] args) {
 
-        CartProcessor i = new CartProcessor();
+        CartItemProcessor i = new CartItemProcessor();
         i.process();
 //        promotionProcessor.discountProcess();
 //      System.out.print(i.process().size());
