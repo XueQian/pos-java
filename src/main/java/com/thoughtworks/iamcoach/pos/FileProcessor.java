@@ -9,7 +9,7 @@ import java.util.List;
 
 public class FileProcessor {
 
-    public List readFile(String fileName) {
+    public static List readFile(String fileName) {
 
         String filePath = FileProcessor.class.getClassLoader().getResource(fileName).getPath();
         List<String> data = new ArrayList<String>();
