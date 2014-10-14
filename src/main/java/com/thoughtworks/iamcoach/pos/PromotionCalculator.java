@@ -9,7 +9,8 @@ public class PromotionCalculator {
     }
 
     public double calculateDiscount(CartItem cartItem) {
-        double discountMoney = cartItem.getItem().getPrice()*cartItem.getCount()*getDiscount(cartItem.getItem().getBarcode());
+        double basicMoney = cartItem.getItem().getPrice() * cartItem.getCount();
+        double discountMoney = basicMoney * getDiscount(cartItem.getItem().getBarcode());
         return discountMoney;
     }
 
