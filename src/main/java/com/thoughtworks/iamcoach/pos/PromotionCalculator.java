@@ -1,5 +1,7 @@
 package com.thoughtworks.iamcoach.pos;
 
+import java.util.DoubleSummaryStatistics;
+
 public class PromotionCalculator {
 
     public Double calculateOneFree(String barcode){
@@ -10,6 +12,7 @@ public class PromotionCalculator {
     }
 
     public double calculateDiscount(CartItem cartItem) {
-        return 0.0;
+        double discountMoney = cartItem.getItem().getPrice()*cartItem.getCount();
+        return discountMoney;
     }
 }

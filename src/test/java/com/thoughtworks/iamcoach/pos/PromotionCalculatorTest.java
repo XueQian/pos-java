@@ -18,7 +18,7 @@ public class PromotionCalculatorTest {
         PromotionCalculator promotionCalculator = new PromotionCalculator();
         Item item = new Item("ITEM000005","鸡翅",55,"块");
         CartItem cartItem = new CartItem(item,2);
-        assertThat(promotionCalculator.calculateDiscount(cartItem)).isEqualTo(0.0);
+        assertThat(promotionCalculator.calculateDiscount(cartItem)).isEqualTo(110.0);
     }
 
 
