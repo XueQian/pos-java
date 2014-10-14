@@ -5,7 +5,8 @@ import java.util.List;
 public class PromotionCalculator {
 
     public double calculateOneFree(CartItem cartItem){
-        return 0.0;
+        double oneFreeMoney = ((int)(cartItem.getCount()/3)*2 + cartItem.getCount()%3) * cartItem.getItem().getPrice();
+        return oneFreeMoney;
     }
 
     public double calculateDiscount(CartItem cartItem) {
