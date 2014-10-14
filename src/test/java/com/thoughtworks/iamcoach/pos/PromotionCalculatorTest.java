@@ -21,7 +21,13 @@ public class PromotionCalculatorTest {
         assertThat(promotionCalculator.calculateDiscount(cartItem)).isEqualTo(110.0);
     }
 
-
+    @Test
+    public void should_return_total_money_with_a_one_free_promotion(){
+        PromotionCalculator promotionCalculator = new PromotionCalculator();
+        Item item = new Item("ITEM000005","鸡翅",55,"块");
+        CartItem cartItem = new CartItem(item,2);
+        assertThat(promotionCalculator.calculateOneFree(cartItem)).isEqualTo(0.0);
+    }
 
 
 }
