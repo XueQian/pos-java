@@ -1,13 +1,13 @@
 package com.thoughtworks.iamcoach.pos;
 
-public class PromotionCaculator {
+public class PromotionCalculator {
 
 
 
 
 
 
-    public Double caculateOneFree(String barcode){
+    public Double calculateOneFree(String barcode){
         ItemProcessor itemProcessor = new ItemProcessor();
 
 
