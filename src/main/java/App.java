@@ -1,19 +1,14 @@
 
-import com.thoughtworks.iamcoach.pos.Scanner;
+import com.thoughtworks.iamcoach.pos.CartItem;
+import com.thoughtworks.iamcoach.pos.Item;
+import com.thoughtworks.iamcoach.pos.PromotionCalculator;
 
 public class App {
     public static void main(String[] args) {
 
-        Scanner i = new Scanner();
-        i.process();
-//        promotionProcessor.discountProcess();
-//      System.out.print(i.process().size());
-        System.out.print(i.process().get(0).getItem().getName());
-
-        System.out.print(i.process().get(1).getItem().getName());
-
-        System.out.print(i.process().get(2).getItem().getName());
-
-
+        PromotionCalculator promotionCalculator = new PromotionCalculator();
+        Item item = new Item("ITEM000001","可乐",11,"瓶");
+        CartItem cartItem = new CartItem(item,3);
+        System.out.print(promotionCalculator.calculateDiscount(cartItem));
     }
 }
