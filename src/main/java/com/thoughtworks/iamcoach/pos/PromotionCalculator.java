@@ -55,7 +55,13 @@ public class PromotionCalculator {
     }
 
     public boolean hasExistSecondHalf(CartItem cartItem) {
-
-        return true;
+        PromotionProcessor promotionProcessor = new PromotionProcessor();
+        List<Promotion> secondHalfCartItems = promotionProcessor.halfProcess();
+        for (Promotion secondHalfCartItem : secondHalfCartItems){
+            if(secondHalfCartItem.getBarcode().equals(cartItem.getItem().getBarcode())){
+                return true;
+            }
+        }
+        return false;
     }
 }
