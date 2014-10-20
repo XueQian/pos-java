@@ -1,13 +1,25 @@
-
+import com.thoughtworks.iamcoach.pos.Calculator;
 import com.thoughtworks.iamcoach.pos.CartItem;
-import com.thoughtworks.iamcoach.pos.Item;
-import com.thoughtworks.iamcoach.pos.PromotionCalculator;
+import com.thoughtworks.iamcoach.pos.Scanner;
+
+import java.util.Date;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
+       Scanner scanner = new Scanner();
+        Calculator calculator = new Calculator();
+       System.out.println("********LET US GO*********");
+       System.out.println("打印时间　" + new Date());
 
-        PromotionCalculator promotionCalculator = new PromotionCalculator();
-        Item item = new Item("ITEM000001","可乐",11,"瓶");
-        CartItem cartItem = new CartItem(item,3);
+        List<CartItem> cartItems = scanner.process();
+        for (CartItem cartItem : cartItems){
+            System.out.println("购物明细　名称："+cartItem.getItem().getName()+
+                    "  数量："+cartItem.getCount()+"  单价："+cartItem.getItem().getPrice()+
+            "  单位："+cartItem.getItem().getUnit()+"  小计:"+calculator.getSubtotal(cartItem));
+        }
+       System.out.println("总计金额　优惠前："+calculator.getTotalMoney()+"  优惠后："+calculator.getTotalMoneyAfterPromoting()+
+       "  优惠差价:"+calculator.getSavedMoney());
+
     }
 }
