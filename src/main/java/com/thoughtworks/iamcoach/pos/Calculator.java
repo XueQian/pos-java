@@ -19,7 +19,7 @@ public class Calculator {
             subtotal = cartItem.getCount() * cartItem.getItem().getPrice();
 
         } else {
-            
+
             List<Double> promotionList = new ArrayList<Double>();
 
             if (discountPrice > 0) {
@@ -55,4 +55,7 @@ public class Calculator {
         return totalMoney;
     }
 
+    public double getTotalMoneyAfterPromoting() {
+        return 0;
+    }
 }

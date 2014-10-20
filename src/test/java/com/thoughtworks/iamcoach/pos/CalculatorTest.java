@@ -33,5 +33,11 @@ public class CalculatorTest {
         assertThat(calculator.getSubtotal(cartItem)).isEqualTo(50);
     }
 
+    @Test
+    public void should_return_total_money_after_promotion(){
+        Calculator calculator = new Calculator();
+        assertThat(calculator.getTotalMoneyAfterPromoting()).isEqualTo(0);
+    }
+
 }
 
