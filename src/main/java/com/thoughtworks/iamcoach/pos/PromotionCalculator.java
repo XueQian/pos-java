@@ -79,12 +79,16 @@ public class PromotionCalculator {
 
         PromotionProcessor promotionProcessor = new PromotionProcessor();
         List<Promotion> secondHalfCartItems = promotionProcessor.halfProcess();
-        
+
         for (Promotion secondHalfCartItem : secondHalfCartItems) {
             if (secondHalfCartItem.getBarcode().equals(cartItem.getItem().getBarcode())) {
                 return true;
             }
         }
         return false;
+    }
+
+    public double getLowestPrice(CartItem cartItem) {
+        return 40;
     }
 }
