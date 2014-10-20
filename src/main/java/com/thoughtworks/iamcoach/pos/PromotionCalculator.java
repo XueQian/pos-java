@@ -44,6 +44,13 @@ public class PromotionCalculator {
     }
 
     public boolean hasExistOneFree(CartItem cartItem) {
-        return true;
+        PromotionProcessor promotionProcessor = new PromotionProcessor();
+        List<Promotion> oneFreeCartItems = promotionProcessor.freeProcess();
+        for (Promotion oneFreeCartItem : oneFreeCartItems){
+            if(oneFreeCartItem.getBarcode().equals(cartItem.getItem().getBarcode())){
+                return true;
+            }
+        }
+        return false;
     }
 }
