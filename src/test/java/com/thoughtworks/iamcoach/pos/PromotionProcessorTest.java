@@ -12,18 +12,6 @@ import static org.mockito.Mockito.when;
 
 public class PromotionProcessorTest {
 
-    private List<Promotion> process(String fileName) {
-
-        List<Promotion> promotions = new ArrayList<Promotion>();
-        List<String> promotionList = readFile(fileName);
-
-        for (String aPromotionList : promotionList) {
-            Promotion promotion = new Promotion(aPromotionList);
-            promotions.add(promotion);
-        }
-        return promotions;
-    }
-
     @Test
     public void should_return_an_promotion_object_with_one_parament() {
         PromotionProcessor promotionProcessor = mock(PromotionProcessor.class);
@@ -42,12 +30,6 @@ public class PromotionProcessorTest {
         when(promotionProcessor.discountProcess()).thenReturn(promotions);
         assertThat(promotionProcessor.discountProcess()).isEqualTo(promotions);
 
-    }
-
-    @Test
-    public void should_return_a_promotion_list() {
-        assertThat(process("buy_two_get_one_free_promotion.txt").get(0).getBarcode())
-                .isEqualTo("ITEM000001");
     }
 
     @Test
