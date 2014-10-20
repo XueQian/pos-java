@@ -25,7 +25,7 @@ public class PromotionCalculator {
         return Collections.min(promotionList);
     }
 
-    private double calculateOneFree(CartItem cartItem) {
+    public double calculateOneFree(CartItem cartItem) {
 
         double oneFreeMoney = 0.0;
 
@@ -35,7 +35,7 @@ public class PromotionCalculator {
         return oneFreeMoney;
     }
 
-    private double calculateDiscount(CartItem cartItem) {
+    public double calculateDiscount(CartItem cartItem) {
 
         double discountMoney = 0.0;
 
@@ -46,7 +46,7 @@ public class PromotionCalculator {
         return discountMoney;
     }
 
-    private double calculateSecondHalf(CartItem cartItem) {
+    public double calculateSecondHalf(CartItem cartItem) {
 
         double secondHalfMoney = 0.0;
 
