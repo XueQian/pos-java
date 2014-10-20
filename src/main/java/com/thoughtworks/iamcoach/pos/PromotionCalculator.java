@@ -1,8 +1,29 @@
 package com.thoughtworks.iamcoach.pos;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PromotionCalculator {
+
+    public double getLowestPrice(CartItem cartItem) {
+
+        List<Double> promotionList = new ArrayList<Double>();
+
+        if(calculateDiscount(cartItem) >0){
+            promotionList.add(calculateDiscount(cartItem));
+        }
+
+        if(calculateOneFree(cartItem)>0){
+            promotionList.add(calculateOneFree(cartItem));
+        }
+
+        if (calculateSecondHalf(cartItem)>0){
+            promotionList.add(calculateSecondHalf(cartItem));
+        }
+
+        return  Collections.min(promotionList);
+    }
 
     private double calculateOneFree(CartItem cartItem) {
 
@@ -88,7 +109,4 @@ public class PromotionCalculator {
         return false;
     }
 
-    public double getLowestPrice(CartItem cartItem) {
-        return 40;
-    }
 }

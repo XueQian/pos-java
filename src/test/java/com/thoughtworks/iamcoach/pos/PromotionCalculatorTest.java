@@ -11,12 +11,11 @@ public class PromotionCalculatorTest {
 
     @Test
     public void should_return_a_lowest_promotion(){
+
         PromotionCalculator promotionCalculator = new PromotionCalculator();
         Item item = new Item("ITEM000005","鸡翅",10,"块");
         CartItem cartItem = new CartItem(item,5);
-        assertThat(promotionCalculator.getLowestPrice(cartItem)).isEqualTo(40);
+        assertThat(promotionCalculator.getLowestPrice(cartItem)).isEqualTo(40.0);
 
     }
-
-
 }
