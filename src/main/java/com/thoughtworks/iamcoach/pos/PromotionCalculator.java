@@ -10,19 +10,19 @@ public class PromotionCalculator {
 
         List<Double> promotionList = new ArrayList<Double>();
 
-        if(calculateDiscount(cartItem) >0){
+        if (calculateDiscount(cartItem) > 0) {
             promotionList.add(calculateDiscount(cartItem));
         }
 
-        if(calculateOneFree(cartItem)>0){
+        if (calculateOneFree(cartItem) > 0) {
             promotionList.add(calculateOneFree(cartItem));
         }
 
-        if (calculateSecondHalf(cartItem)>0){
+        if (calculateSecondHalf(cartItem) > 0) {
             promotionList.add(calculateSecondHalf(cartItem));
         }
 
-        return  Collections.min(promotionList);
+        return Collections.min(promotionList);
     }
 
     private double calculateOneFree(CartItem cartItem) {
