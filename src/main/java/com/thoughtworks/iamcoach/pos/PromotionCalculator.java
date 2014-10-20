@@ -4,18 +4,18 @@ import java.util.List;
 
 public class PromotionCalculator {
 
-    public double calculateOneFree(CartItem cartItem){
+    private double calculateOneFree(CartItem cartItem){
         double oneFreeMoney = ((int)(cartItem.getCount()/3)*2 + cartItem.getCount()%3) * cartItem.getItem().getPrice();
         return oneFreeMoney;
     }
 
-    public double calculateDiscount(CartItem cartItem) {
+    private double calculateDiscount(CartItem cartItem) {
         double basicMoney = cartItem.getItem().getPrice() * cartItem.getCount();
         double discountMoney = basicMoney * getDiscount(cartItem.getItem().getBarcode());
         return discountMoney;
     }
 
-    public double calculateSecondHalf(CartItem cartItem) {
+    private double calculateSecondHalf(CartItem cartItem) {
         double secondHalfMoney = cartItem.getCount()*cartItem.getItem().getPrice() - (int)(cartItem.getCount()/3)*cartItem.getItem().getPrice()/2;
         return secondHalfMoney;
     }
@@ -32,7 +32,7 @@ public class PromotionCalculator {
         return 0.0;
     }
 
-    public boolean hasExistDiscount(CartItem cartItem) {
+    private boolean hasExistDiscount(CartItem cartItem) {
         PromotionProcessor promotionProcessor = new PromotionProcessor();
         List<Promotion> discountCartItems = promotionProcessor.discountProcess();
         for (Promotion discountCartItem : discountCartItems){
@@ -43,7 +43,7 @@ public class PromotionCalculator {
         return false;
     }
 
-    public boolean hasExistOneFree(CartItem cartItem) {
+    private boolean hasExistOneFree(CartItem cartItem) {
         PromotionProcessor promotionProcessor = new PromotionProcessor();
         List<Promotion> oneFreeCartItems = promotionProcessor.freeProcess();
         for (Promotion oneFreeCartItem : oneFreeCartItems){
@@ -54,7 +54,7 @@ public class PromotionCalculator {
         return false;
     }
 
-    public boolean hasExistSecondHalf(CartItem cartItem) {
+    private boolean hasExistSecondHalf(CartItem cartItem) {
         PromotionProcessor promotionProcessor = new PromotionProcessor();
         List<Promotion> secondHalfCartItems = promotionProcessor.halfProcess();
         for (Promotion secondHalfCartItem : secondHalfCartItems){
