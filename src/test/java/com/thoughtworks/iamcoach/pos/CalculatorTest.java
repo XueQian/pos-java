@@ -42,7 +42,7 @@ public class CalculatorTest {
     @Test
     public void should_return_saved_money(){
         Calculator calculator = new Calculator();
-        assertThat(calculator.getSavedMoney()).isEqualTo(0);
+        assertThat(calculator.getSavedMoney()).isEqualTo(78.65);
     }
 
 }
