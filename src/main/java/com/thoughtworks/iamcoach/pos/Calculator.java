@@ -69,4 +69,8 @@ public class Calculator {
 
         return totalMoneyAfterPromoting;
     }
+
+    public double getSavedMoney() {
+        return 0;
+    }
 }

@@ -39,5 +39,11 @@ public class CalculatorTest {
         assertThat(calculator.getTotalMoneyAfterPromoting()).isEqualTo(207.35);
     }
 
+    @Test
+    public void should_return_saved_money(){
+        Calculator calculator = new Calculator();
+        assertThat(calculator.getSavedMoney()).isEqualTo(0);
+    }
+
 }
 
