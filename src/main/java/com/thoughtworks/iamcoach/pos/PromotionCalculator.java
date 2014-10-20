@@ -42,4 +42,8 @@ public class PromotionCalculator {
         }
         return false;
     }
+
+    public boolean hasExistOneFree(CartItem cartItem) {
+        return true;
+    }
 }

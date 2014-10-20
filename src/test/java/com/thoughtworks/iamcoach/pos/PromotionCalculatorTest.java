@@ -49,4 +49,12 @@ public class PromotionCalculatorTest {
         assertThat(promotionCalculator.hasExistDiscount(cartItem)).isEqualTo(true);
     }
 
+    @Test
+    public void should_retrurn_true_when_has_one_free_promition(){
+        PromotionCalculator promotionCalculator = new PromotionCalculator();
+        Item item = new Item("ITEM000005","鸡翅",10,"块");
+        CartItem cartItem = new CartItem(item,5);
+        assertThat(promotionCalculator.hasExistOneFree(cartItem)).isEqualTo(true);
+    }
+
 }
