@@ -12,6 +12,8 @@ public class PromotionCalculatorTest {
     @Test
     public void should_return_a_lowest_promotion(){
         PromotionCalculator promotionCalculator = new PromotionCalculator();
+        Item item = new Item("ITEM000005","鸡翅",55,"块");
+        CartItem cartItem = new CartItem(item,2);
 
     }
 
@@ -37,6 +39,14 @@ public class PromotionCalculatorTest {
         Item item = new Item("ITEM000005","鸡翅",10,"块");
         CartItem cartItem = new CartItem(item,5);
         assertThat(promotionCalculator.calculateSecondHalf(cartItem)).isEqualTo(45);
+    }
+
+    @Test
+    public void should_retrurn_true_when_has_a_discount_promition(){
+        PromotionCalculator promotionCalculator = new PromotionCalculator();
+        Item item = new Item("ITEM000005","鸡翅",10,"块");
+        CartItem cartItem = new CartItem(item,5);
+        assertThat(promotionCalculator.hasExistDiscount(cartItem)).isEqualTo(true);
     }
 
 }

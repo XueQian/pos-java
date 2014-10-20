@@ -32,4 +32,14 @@ public class PromotionCalculator {
         return 0.0;
     }
 
+    public boolean hasExistDiscount(CartItem cartItem) {
+        PromotionProcessor promotionProcessor = new PromotionProcessor();
+        List<Promotion> discountCartItems = promotionProcessor.discountProcess();
+        for (Promotion discountCartItem : discountCartItems){
+            if(discountCartItem.getBarcode().equals(cartItem.getItem().getBarcode())){
+                return true;
+            }
+        }
+        return false;
+    }
 }
