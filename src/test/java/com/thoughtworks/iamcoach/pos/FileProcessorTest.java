@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
 public class FileProcessorTest {
 
     @Test
-    public void should_get_a_list(){
+    public void should_get_a_list() {
 
         FileProcessor fileProcessor = mock(FileProcessor.class);
 

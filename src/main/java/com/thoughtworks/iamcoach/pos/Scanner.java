@@ -20,21 +20,21 @@ public class Scanner {
         }
 
         Set<String> uniqueBarcode = new HashSet<String>(cartList);
-        for(String barcode : uniqueBarcode){
-            if(barcode.length() <= 10){
-                CartItem cartItem = new CartItem(getItem(barcode),Collections.frequency(cartList,barcode));
+        for (String barcode : uniqueBarcode) {
+            if (barcode.length() <= 10) {
+                CartItem cartItem = new CartItem(getItem(barcode), Collections.frequency(cartList, barcode));
                 cartItems.add(cartItem);
             }
         }
         return cartItems;
     }
 
-    private Item getItem(String barcode){
+    private Item getItem(String barcode) {
         ItemProcessor itemProcessor = new ItemProcessor();
         List<Item> items = itemProcessor.process();
 
-        for(Item item:items){
-            if(item.getBarcode().equals(barcode)){
+        for (Item item : items) {
+            if (item.getBarcode().equals(barcode)) {
                 return item;
             }
         }

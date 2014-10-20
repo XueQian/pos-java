@@ -34,13 +34,13 @@ public class CalculatorTest {
     }
 
     @Test
-    public void should_return_total_money_after_promotion(){
+    public void should_return_total_money_after_promotion() {
         Calculator calculator = new Calculator();
         assertThat(calculator.getTotalMoneyAfterPromoting()).isEqualTo(207.35);
     }
 
     @Test
-    public void should_return_saved_money(){
+    public void should_return_saved_money() {
         Calculator calculator = new Calculator();
         assertThat(calculator.getSavedMoney()).isEqualTo(78.65);
     }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemProcessor {
-    public List<Item> process(){
+    public List<Item> process() {
         FileProcessor fileProcessor = new FileProcessor();
         List<Item> items = new ArrayList<Item>();
         List<String> itemList = fileProcessor.readFile("items.txt");

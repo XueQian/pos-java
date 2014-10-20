@@ -1,11 +1,8 @@
 package com.thoughtworks.iamcoach.pos;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PromotionCalculator {
-
 
 
     public double calculateOneFree(CartItem cartItem) {

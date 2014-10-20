@@ -8,7 +8,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class ScannerTest {
 
     @Test
-    public void should_return_a_cart_list(){
+    public void should_return_a_cart_list() {
 
         Scanner cartItemProcessor = new Scanner();
         assertThat(cartItemProcessor.process().get(0).getCount()).isEqualTo(2);

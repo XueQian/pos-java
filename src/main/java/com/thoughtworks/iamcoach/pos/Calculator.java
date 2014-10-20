@@ -62,7 +62,7 @@ public class Calculator {
         Scanner scanner = new Scanner();
         List<CartItem> cartItems = scanner.process();
 
-        for (CartItem cartItem : cartItems){
+        for (CartItem cartItem : cartItems) {
 
             totalMoneyAfterPromoting += getSubtotal(cartItem);
         }

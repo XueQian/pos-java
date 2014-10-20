@@ -6,7 +6,7 @@ public class Item {
     private double price;
     private String unit;
 
-    public Item(){
+    public Item() {
 
     }
 

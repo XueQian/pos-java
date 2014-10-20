@@ -4,12 +4,12 @@ public class Promotion {
     private String barcode;
     private double discount;
 
-    public Promotion(String barcode){
+    public Promotion(String barcode) {
         this.barcode = barcode;
 
     }
 
-    public Promotion(String barcode,double discount){
+    public Promotion(String barcode, double discount) {
         this.barcode = barcode;
         this.discount = discount;
     }

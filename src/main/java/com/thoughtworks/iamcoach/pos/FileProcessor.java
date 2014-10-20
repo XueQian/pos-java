@@ -13,14 +13,14 @@ public class FileProcessor {
 
         String filePath = FileProcessor.class.getClassLoader().getResource(fileName).getPath();
         List<String> data = new ArrayList<String>();
-     try{
+        try {
 
-         data= Files.readAllLines(Paths.get(filePath),
-         Charset.defaultCharset());
-     }catch (IOException e){
+            data = Files.readAllLines(Paths.get(filePath),
+                    Charset.defaultCharset());
+        } catch (IOException e) {
 
-         System.out.print("读取文件失败。。。。。。");
-     }
+            System.out.print("读取文件失败。。。。。。");
+        }
         return data;
     }
 
