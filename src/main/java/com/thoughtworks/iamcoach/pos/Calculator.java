@@ -56,6 +56,17 @@ public class Calculator {
     }
 
     public double getTotalMoneyAfterPromoting() {
-        return 0;
+
+        double totalMoneyAfterPromoting = 0;
+
+        Scanner scanner = new Scanner();
+        List<CartItem> cartItems = scanner.process();
+
+        for (CartItem cartItem : cartItems){
+
+            totalMoneyAfterPromoting += getSubtotal(cartItem);
+        }
+
+        return totalMoneyAfterPromoting;
     }
 }
