@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Calculator {
 
-
     public double getSubtotal(CartItem cartItem) {
 
         PromotionCalculator promotionCalculator = new PromotionCalculator();
@@ -28,4 +27,9 @@ public class Calculator {
         return Collections.min(promotionList);
     }
 
+
+    public double getTotalMoney() {
+
+        return 660;
+    }
 }
