@@ -6,8 +6,10 @@ import java.util.List;
 
 public class Calculator {
 
-    PromotionCalculator promotionCalculator = new PromotionCalculator();
+
     public double getSubtotal(CartItem cartItem) {
+
+        PromotionCalculator promotionCalculator = new PromotionCalculator();
 
         List<Double> promotionList = new ArrayList<Double>();
 
@@ -25,5 +27,5 @@ public class Calculator {
 
         return Collections.min(promotionList);
     }
-    
+
 }
