@@ -13,24 +13,33 @@ public class Calculator {
         double discountPrice = promotionCalculator.calculateDiscount(cartItem);
         double oneFreePrice = promotionCalculator.calculateOneFree(cartItem);
         double secondHalfPrice = promotionCalculator.calculateSecondHalf(cartItem);
+        double subtotal;
 
-        List<Double> promotionList = new ArrayList<Double>();
+        if (discountPrice == 0 && oneFreePrice == 0 && secondHalfPrice == 0) {
+            subtotal = cartItem.getCount() * cartItem.getItem().getPrice();
 
-        if (discountPrice > 0) {
-            promotionList.add(discountPrice);
+        } else {
+            
+            List<Double> promotionList = new ArrayList<Double>();
+
+            if (discountPrice > 0) {
+                promotionList.add(discountPrice);
+            }
+
+            if (oneFreePrice > 0) {
+                promotionList.add(oneFreePrice);
+            }
+
+            if (secondHalfPrice > 0) {
+                promotionList.add(secondHalfPrice);
+            }
+
+            subtotal = Collections.min(promotionList);
+
         }
+        return subtotal;
 
-        if (oneFreePrice > 0) {
-            promotionList.add(oneFreePrice);
-        }
-
-        if (secondHalfPrice > 0) {
-            promotionList.add(secondHalfPrice);
-        }
-
-        return Collections.min(promotionList);
     }
-
 
     public double getTotalMoney() {
 
@@ -45,6 +54,5 @@ public class Calculator {
         }
         return totalMoney;
     }
-
 
 }

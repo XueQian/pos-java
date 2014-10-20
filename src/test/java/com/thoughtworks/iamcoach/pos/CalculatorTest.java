@@ -23,19 +23,15 @@ public class CalculatorTest {
         assertThat(calculator.getTotalMoney()).isEqualTo(286);
     }
 
-//    @Test
-//    public void should_return_a_no_promotion_price() {
-//
-//        Calculator calculator = new Calculator();
-//
-//        Item item = new Item("ITEM000002", "苹果", 10, "个");
-//        CartItem cartItem = new CartItem(item, 5);
-//        assertThat(calculator.getSubtotal(cartItem)).isEqualTo(50);
-//    }
+    @Test
+    public void should_return_a_no_promotion_price() {
 
+        Calculator calculator = new Calculator();
 
-
-
+        Item item = new Item("ITEM000002", "苹果", 10, "个");
+        CartItem cartItem = new CartItem(item, 5);
+        assertThat(calculator.getSubtotal(cartItem)).isEqualTo(50);
+    }
 
 }
 
