@@ -30,6 +30,15 @@ public class Calculator {
 
     public double getTotalMoney() {
 
-        return 660;
+        double totalMoney = 0.0;
+
+        Scanner scanner = new Scanner();
+        List<CartItem> cartItems = scanner.process();
+
+        for (CartItem cartItem : cartItems) {
+
+            totalMoney += cartItem.getItem().getPrice() * cartItem.getCount();
+        }
+        return totalMoney;
     }
 }
