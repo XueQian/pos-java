@@ -53,4 +53,9 @@ public class PromotionCalculator {
         }
         return false;
     }
+
+    public boolean hasExistSecondHalf(CartItem cartItem) {
+
+        return true;
+    }
 }
