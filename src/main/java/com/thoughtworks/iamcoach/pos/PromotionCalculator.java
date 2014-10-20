@@ -15,6 +15,11 @@ public class PromotionCalculator {
         return discountMoney;
     }
 
+    public double calculateSecondHalf(CartItem cartItem) {
+        double secondHalfMoney = cartItem.getCount()*cartItem.getItem().getPrice() - (int)(cartItem.getCount()/3)*cartItem.getItem().getPrice()/2;
+        return secondHalfMoney;
+    }
+
     private double getDiscount(String barcode){
         PromotionProcessor promotionProcessor = new PromotionProcessor();
         List<Promotion> discountList = promotionProcessor.discountProcess();
@@ -26,4 +31,5 @@ public class PromotionCalculator {
         }
         return 0.0;
     }
+
 }
