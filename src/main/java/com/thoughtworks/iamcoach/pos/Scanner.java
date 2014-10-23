@@ -6,9 +6,8 @@ public class Scanner {
 
     public List<CartItem> process() {
 
-        FileProcessor fileProcessor = new FileProcessor();
         List<CartItem> cartItems = new ArrayList<CartItem>();
-        List<String> cartList = fileProcessor.readFile("cart.txt");
+        List<String> cartList = FileProcessor.readFile("cart.txt");
 
         for (String aCartList : cartList) {
             if (aCartList.length() > 10) {

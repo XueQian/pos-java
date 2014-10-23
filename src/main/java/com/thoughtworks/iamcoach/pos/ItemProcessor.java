@@ -5,9 +5,9 @@ import java.util.List;
 
 public class ItemProcessor {
     public List<Item> process() {
-        FileProcessor fileProcessor = new FileProcessor();
+
         List<Item> items = new ArrayList<Item>();
-        List<String> itemList = fileProcessor.readFile("items.txt");
+        List<String> itemList = FileProcessor.readFile("items.txt");
 
         for (String aItemList : itemList) {
             String[] stringItem = aItemList.split(",");

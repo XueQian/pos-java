@@ -15,10 +15,8 @@ public class PromotionProcessor {
 
     public List<Promotion> discountProcess() {
 
-        FileProcessor fileProcessor = new FileProcessor();
-
         List<Promotion> promotions = new ArrayList<Promotion>();
-        List<String> promotionList = fileProcessor.readFile("discount_promotion.txt");
+        List<String> promotionList = FileProcessor.readFile("discount_promotion.txt");
 
         for (String aPromotionList : promotionList) {
             String[] stringPromotion = aPromotionList.split(":");
@@ -31,9 +29,8 @@ public class PromotionProcessor {
 
     private List<Promotion> process(String fileName) {
 
-        FileProcessor fileProcessor = new FileProcessor();
         List<Promotion> promotions = new ArrayList<Promotion>();
-        List<String> promotionList = fileProcessor.readFile(fileName);
+        List<String> promotionList = FileProcessor.readFile(fileName);
 
         for (String aPromotionList : promotionList) {
             Promotion promotion = new Promotion(aPromotionList);
