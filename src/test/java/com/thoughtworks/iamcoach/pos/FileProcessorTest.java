@@ -16,4 +16,9 @@ public class FileProcessorTest {
         assertThat(fileProcessor.readFile(fileName).get(0)).isEqualTo("ITEM000001,可乐,11,瓶");
     }
 
+    @Test(expected = NullPointerException.class)
+    public void should_throws_exception()throws NullPointerException{
+        FileProcessor.readFile("i");
+    }
+
 }
