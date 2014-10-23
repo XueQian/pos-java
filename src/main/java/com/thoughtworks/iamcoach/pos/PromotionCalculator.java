@@ -4,12 +4,13 @@ import java.util.List;
 
 public class PromotionCalculator {
 
+    PromotionProcessor promotionProcessor = new PromotionProcessor();
 
     public double calculateOneFree(CartItem cartItem) {
 
         double oneFreeMoney = 0.0;
 
-        if (hasExistOneFree(cartItem)) {
+        if (hasExistPromotion(cartItem, promotionProcessor.freeProcess())) {
             oneFreeMoney = ((int) (cartItem.getCount() / 3) * 2 + cartItem.getCount() % 3) * cartItem.getItem().getPrice();
         }
         return oneFreeMoney;
@@ -19,7 +20,7 @@ public class PromotionCalculator {
 
         double discountMoney = 0.0;
 
-        if (hasExistDiscount(cartItem)) {
+        if (hasExistPromotion(cartItem, promotionProcessor.discountProcess())) {
             double basicMoney = cartItem.getItem().getPrice() * cartItem.getCount();
             discountMoney = basicMoney * getDiscount(cartItem.getItem().getBarcode());
         }
@@ -30,7 +31,7 @@ public class PromotionCalculator {
 
         double secondHalfMoney = 0.0;
 
-        if (hasExistSecondHalf(cartItem)) {
+        if (hasExistPromotion(cartItem, promotionProcessor.halfProcess())) {
             secondHalfMoney = cartItem.getCount() * cartItem.getItem().getPrice() - (int) (cartItem.getCount() / 3) * cartItem.getItem().getPrice() / 2;
         }
         return secondHalfMoney;
@@ -50,39 +51,10 @@ public class PromotionCalculator {
         return 0.0;
     }
 
-    private boolean hasExistDiscount(CartItem cartItem) {
+    private boolean hasExistPromotion(CartItem cartItem, List<Promotion> promotionCartItems) {
 
-        PromotionProcessor promotionProcessor = new PromotionProcessor();
-        List<Promotion> discountCartItems = promotionProcessor.discountProcess();
-
-        for (Promotion discountCartItem : discountCartItems) {
-            if (discountCartItem.getBarcode().equals(cartItem.getItem().getBarcode())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean hasExistOneFree(CartItem cartItem) {
-
-        PromotionProcessor promotionProcessor = new PromotionProcessor();
-        List<Promotion> oneFreeCartItems = promotionProcessor.freeProcess();
-
-        for (Promotion oneFreeCartItem : oneFreeCartItems) {
-            if (oneFreeCartItem.getBarcode().equals(cartItem.getItem().getBarcode())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean hasExistSecondHalf(CartItem cartItem) {
-
-        PromotionProcessor promotionProcessor = new PromotionProcessor();
-        List<Promotion> secondHalfCartItems = promotionProcessor.halfProcess();
-
-        for (Promotion secondHalfCartItem : secondHalfCartItems) {
-            if (secondHalfCartItem.getBarcode().equals(cartItem.getItem().getBarcode())) {
+        for (Promotion promotionCartItem : promotionCartItems) {
+            if (promotionCartItem.getBarcode().equals(cartItem.getItem().getBarcode())) {
                 return true;
             }
         }
