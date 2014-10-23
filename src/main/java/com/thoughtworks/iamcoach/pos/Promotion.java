@@ -18,15 +18,8 @@ public class Promotion {
         return barcode;
     }
 
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
-    }
-
     public double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
 }
