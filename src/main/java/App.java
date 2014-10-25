@@ -17,7 +17,7 @@ public class App {
         List<CartItem> cartItems = scanner.process();
         for (CartItem cartItem : cartItems) {
             System.out.println("购物明细 名称：" + cartItem.getItem().getName() +
-                    "  数量：" + cartItem.getCount() + "  单价：" + cartItem.getItem().getPrice() + "/元"+
+                    "  数量：" + cartItem.getCount() + "  单价：" + cartItem.getItem().getPrice() + "元"+
                     "  单位：" + cartItem.getItem().getUnit() + "  小计:" + calculator.getSubtotal(cartItem)+"元");
         }
         System.out.println("总计金额 优惠前：" + calculator.getTotalMoney() + "元   优惠后：" + calculator.getTotalMoneyAfterPromoting() +
